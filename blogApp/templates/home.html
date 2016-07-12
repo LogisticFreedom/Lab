@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for blog in blogs %}
+
+          <a href="{% url 'blog_get_detail' blog.id %}"><h2 class=blog-post-title>{{ blog.title }}</h2></a>
+
+              <p class="blog-post-meta">{{ blog.pubTime|date:"Y-m-d H:i" }} by {{ blog.author }}</p>
+              <p class="blog-post-meta">类别：{{ blog.category.name }}</p>
+              {% autoescape on %}
+                  <p class="blog-post-abstract">{{ blog.content|slice:"200" |removetags:"code pre a p span div &nbsp;" }}</p>
+              {% endautoescape %}
+          <hr>
+
+    {% endfor %}
+{% endblock %}

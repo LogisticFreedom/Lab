@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../static/img/icon.jpg">
+
+    <title>4173,Group Geek</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/mycss/blog.css" rel="stylesheet">
+
+
+     <!--<script type="text/javascript" src="/static/syntaxhl/scripts/shCore.js"></script>-->
+	<!--<script type="text/javascript" src="/static/syntaxhl/scripts/shBrushBash.js"></script>-->
+	<!--<script type="text/javascript" src="/static/syntaxhl/scripts/shBrushCpp.js"></script>-->
+	<!--<script type="text/javascript" src="/static/syntaxhl/scripts/shBrushCSharp.js"></script>-->
+	<!--<script type="text/javascript" src="/static/syntaxhl/scripts/shBrushCss.js"></script>-->
+	<!--<script type="text/javascript" src="/static/syntaxhl/scripts/shBrushDelphi.js"></script>-->
+	<!--<script type="text/javascript" src="/static/syntaxhl/scripts/shBrushDiff.js"></script>-->
+	<!--<script type="text/javascript" src="/static/syntaxhl/scripts/shBrushGroovy.js"></script>-->
+	<!--<script type="text/javascript" src="/static/syntaxhl/scripts/shBrushJava.js"></script>-->
+	<!--<script type="text/javascript" src="/static/syntaxhl/scripts/shBrushJScript.js"></script>-->
+	<!--<script type="text/javascript" src="/static/syntaxhl/scripts/shBrushPhp.js"></script>-->
+	<!--<script type="text/javascript" src="/static/syntaxhl/scripts/shBrushPlain.js"></script>-->
+	<!--<script type="text/javascript" src="/static/syntaxhl/scripts/shBrushPython.js"></script>-->
+	<!--<script type="text/javascript" src="/static/syntaxhl/scripts/shBrushRuby.js"></script>-->
+	<!--<script type="text/javascript" src="/static/syntaxhl/scripts/shBrushScala.js"></script>-->
+	<!--<script type="text/javascript" src="/static/syntaxhl/scripts/shBrushSql.js"></script>-->
+	<!--<script type="text/javascript" src="/static/syntaxhl/scripts/shBrushVb.js"></script>-->
+	<!--<script type="text/javascript" src="/static/syntaxhl/scripts/shBrushXml.js"></script>-->
+	<!--<link type="text/css" rel="stylesheet" href="/static/syntaxhl/styles/shCore.css"/>-->
+	<!--<link type="text/css" rel="stylesheet" href="/static/syntaxhl/styles/shThemeDefault.css"/>-->
+	<!--<script type="text/javascript">-->
+		<!--SyntaxHighlighter.config.clipboardSwf = '/static/syntaxhl/scripts/clipboard.swf';-->
+		<!--SyntaxHighlighter.all();-->
+	<!--</script>-->
+
+
+  </head>
+
+  <body>
+    <!--导航栏-->
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item active" href="{% url 'blog_get_blogs' %}">主页</a>
+          <a class="blog-nav-item" href="{% url 'blog_get_blogs' %}">技术博客</a>
+          <a class="blog-nav-item" href="{% url 'blog_video' %}">微课程</a>
+          <a class="blog-nav-item" href="{% url 'blog_get_members' %}">成员</a>
+          <a class="blog-nav-item" href="{% url 'info' %}">信息发布</a>
+          <a class="blog-nav-item" href="{% url 'about' %}">关于</a>
+          <div  style="float:right;">
+            <a class="blog-nav-item"  href="{% url 'blog_register' %}">登录/注册</a>
+            {% if username == "nouser" %}
+              <a class="blog-nav-item"  href="{% url 'blog_control' %}"></a>
+            {% else %}
+              <a class="blog-nav-item"  href="{% url 'blog_control' %}">{{username}}</a>
+              <a class="blog-nav-item"  href="{% url 'blog_logout' %}">退出</a>
+            {% endif %}
+          </div>
+
+
+
+        </nav>
+      </div>
+    </div>
+
+
+    <div class="container">
+
+      <!--大标题-->
+      <div class="blog-header">
+        <h1 class="blog-title">4173，Group Geek</h1>
+        <p class="lead blog-description">永远不要停止思考的脚步</p>
+      </div>
+
+      <!--主题内容-->
+        <div class="row">
+          <div class="col-sm-8 blog-main">
+            <div class="blog-post">
+
+              {% block content %}
+                  <div>这里是默认内容，所有继承自这个模板的，如果不覆盖就显示这里的默认内容。</div>
+              {% endblock %}
+
+            </div><!-- /.blog-post -->
+
+          <nav>
+            <ul class="pager">
+              <li><a href="#">Previous</a></li>
+              <li><a href="#">Next</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!--侧边栏介绍-->
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>4173技术组</h4>
+            <p> 4173技术组简介</p>
+          </div>
+          <div class="sidebar-module">
+            <h4>4173技术组</h4>
+            <ol class="list-unstyled">
+              <img src="/static/img/cat.jpg">
+            </ol>
+          </div>
+          <div class="sidebar-module">
+            <h4>Elsewhere</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">GitHub</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Facebook</a></li>
+            </ol>
+          </div>
+        </div>
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+
+    <!--页脚-->
+    <footer class="blog-footer">
+      <p>Made by freedom.</p>
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </footer>
+
+  </body>
+</html>

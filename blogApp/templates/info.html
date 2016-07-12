@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for info in infos %}
+
+          <h2 class=blog-post-title>{{ info.title }}</h2></a>
+
+              <p class="blog-post-meta">{{ info.infoTime|date:"Y-m-d H:i" }} by {{ info.author }}</p>
+              {% autoescape off %}
+                  <p class="blog-post-abstract">{{ info.content }}</p>
+              {% endautoescape %}
+          <hr>
+
+    {% endfor %}
+{% endblock %}

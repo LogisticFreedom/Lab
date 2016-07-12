@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <a href = "{% url 'blog_write' %}"><input type="button" class="btn btn-primary" style="width:600px;height:400px;font-size:40px" value="写博客" name="bt"></a>
+    <hr>
+    <a href = "{% url 'blog_newInfo' %}"><input  type="button" class="btn btn-success" style="width:600px;height:400px;font-size:40px" value="发布信息" name="bt"></a>
+
+{% endblock %}

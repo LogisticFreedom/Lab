@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <!--<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="/static/mycss/video-default.css" rel="stylesheet">
+    <script type="text/javascript" src="/static/myjs/jquery-1.8.1.min.js"></script>
+    <script type="text/javascript" src="/static/myjs/jquery.video-ui.js"></script>
+
+    <div class="videoUiWrapper thumbnail">
+        <h2 style="font-family:Microsoft YaHei"><b>池豪的飞机炸机视频</b></h2>
+        <video width="600" height="430" id="demo1" controls="controls">
+            <source src="/static/video/v4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!--<script type="text/javascript" >-->
+            <!--$('#demo1').videoUI();-->
+    <!--</script>-->
+    <!--<script>$('#demo1').videoUI({-->
+        <!--'autoHide':false,-->
+        <!--'volumeMedia': 1-->
+    <!--});</script>-->
+
+    <!--<video    width="600" height="450" type="video/mp4"  controls="controls" preload="preload">-->
+        <!--<source src="/static/video/v4.mp4" type="video/mp4">-->
+        <!--您的浏览器不支持 video 标签。-->
+    <!--</video>-->
+{% endblock %}
